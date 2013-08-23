@@ -63,25 +63,16 @@ $ cd my-noflo-example-app
 
 The first thing to do with your project is to create a `package.json` file into the project root. This is the file that is used by NPM for finding and installing the libraries your project needs.
 
-A basic `package.json` file could look like the following. Create one using a text editor:
-
-```json
-{
-  "name": "my-noflo-example-app",
-  "version": "0.0.1"
-}
-```
-
-Once the `package.json` file is in place, you're ready to install NoFlo. Do this by running:
+Run the following command to interactively create a `package.json` file:
 
 ```bash
-$ npm install noflo --save
+npm init
 ```
 
 NPM will fetch the latest release version of NoFlo and all its dependencies. Once this has finished, try that NoFlo works by running:
 
 ```bash
-$ ./node_modules/.bin/noflo -h
+$ noflo -h
 ```
 
 ### Getting components
@@ -107,7 +98,7 @@ Once NPM completes the components from that library will be available to your pr
 You can see a list of components that are installed in your project with:
 
 ```bash
-$ ./node_modules/.bin/noflo list .
+$ noflo list .
 ```
 
 ## Defining your first graph
@@ -137,7 +128,7 @@ Read(filesystem/ReadFile) OUT -> IN Display(core/Output)
 Once you've saved the file you can run the graph with NoFlo:
 
 ```bash
-$ ./node_modules/.bin/noflo graphs/ShowContents.fbp
+$ noflo graphs/ShowContents.fbp
 ```
 
 The contents of your `package.json` should be shown on the console.
@@ -147,7 +138,7 @@ The contents of your `package.json` should be shown on the console.
 If you want to see how the graph works internally, you can run NoFlo with the debugger:
 
 ```bash
-$ ./node_modules/.bin/noflo --debug graphs/ShowContents.fbp
+$ noflo --debug graphs/ShowContents.fbp
 ```
 
 This will show all the various events happening inside the graph:
@@ -180,7 +171,7 @@ Multiply() PRODUCT -> IN Display(core/Output)
 If you run this with:
 
 ```bash
-$ ./node_modules/.bin/noflo graphs/Calculate.fbp
+$ noflo graphs/Calculate.fbp
 ```
 
 it will give the answer of `42`. Doing other mathematical operations with noflo-math is left as an exercise to the user.
